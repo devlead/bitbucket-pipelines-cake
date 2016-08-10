@@ -27,8 +27,8 @@ RUN dotnet --info
 
 # Build Cake
 RUN  git clone https://github.com/cake-build/cake.git \
-    && cd cake
-    && ./build.sh
+    && cd cake \
+    && ./build.sh \
     && cp -R tools /opt/caketools
     
 # Diaplay Cake Version
