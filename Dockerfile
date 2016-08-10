@@ -21,7 +21,7 @@ RUN mkdir -p /opt/dotnet \
     && ln -s /opt/dotnet/dotnet /usr/local/bin
     
 
-# Dislay info installed components
+# Display info installed components
 RUN mono --version
 RUN dotnet --info
 
@@ -31,5 +31,5 @@ RUN  git clone https://github.com/cake-build/cake.git \
     && ./build.sh \
     && cp -R tools /opt/caketools
     
-# Diaplay Cake Version
+# Display Cake Version
 RUN mono /opt/tools/Cake/Cake.exe --version
