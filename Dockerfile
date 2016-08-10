@@ -28,7 +28,7 @@ RUN dotnet --info
 # Build Cake
 RUN  curl -Lsfo caketools.tar.gz https://github.com/devlead/bitbucket-pipelines-cake/releases/download/untagged-90187c72a8a00efcfb91/caketools.tar.gz \
     && mkdir -p /opt/caketools \
-    && tar xf caketools.tar -C /opt/caketools --strip-components=1
+    && tar xf caketools.tar -C /tools --strip-components=1 /opt/caketools
     
 # Display Cake Version
 RUN mono /opt/caketools/Cake/Cake.exe --version
