@@ -26,10 +26,9 @@ RUN mono --version
 RUN dotnet --info
 
 # Build Cake
-RUN  git clone https://github.com/cake-build/cake.git \
-    && cd cake \
-    && ./build.sh \
-    && cp -R tools /opt/caketools
+RUN  curl -Lsfo caketools.tar.gz https://github.com/devlead/bitbucket-pipelines-cake/releases/download/untagged-90187c72a8a00efcfb91/caketools.tar.gz \
+    && mkdir -p /opt/caketools \
+    && tar xf caketools.tar -C /opt/caketools --strip-components=1
     
 # Display Cake Version
-RUN mono /opt/tools/Cake/Cake.exe --version
+RUN mono /opt/caketools/Cake/Cake.exe --version
